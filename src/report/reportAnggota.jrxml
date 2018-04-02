@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportAnggota" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c2779562-2cf6-49cd-8ae2-21df31eade8f">
+	<property name="ireport.zoom" value="2.5937424601000063"/>
+	<property name="ireport.x" value="646"/>
+	<property name="ireport.y" value="279"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     anggota.`id_anggota` AS anggota_id_anggota,
+     anggota.`nama` AS anggota_nama,
+     anggota.`no_telp` AS anggota_no_telp,
+     anggota.`alamat` AS anggota_alamat,
+     anggota.`email` AS anggota_email,
+     anggota.`status` AS anggota_status
+FROM
+     `anggota` anggota]]>
+	</queryString>
+	<field name="anggota_id_anggota" class="java.lang.String"/>
+	<field name="anggota_nama" class="java.lang.String"/>
+	<field name="anggota_no_telp" class="java.lang.String"/>
+	<field name="anggota_alamat" class="java.lang.String"/>
+	<field name="anggota_email" class="java.lang.String"/>
+	<field name="anggota_status" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<image>
+				<reportElement x="27" y="0" width="81" height="83" uuid="44359822-682f-44df-9a05-ad5990f4c243"/>
+				<imageExpression><![CDATA["D:\\Java 1 Project\\Beebook_App\\src\\report\\image\\Beebook.jpeg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="108" y="0" width="447" height="39" backcolor="#FFCCCC" uuid="c3e38dfb-848b-4053-b22f-8c9425235658"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="229" y="0" width="270" height="39" uuid="999bd1f0-28d0-4064-a9f7-fcddac640534"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Perpustakaan Beebook]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="96" width="555" height="1" uuid="e25b54dd-3f4d-4efd-9015-6a4db4a85bab"/>
+			</line>
+			<staticText>
+				<reportElement x="229" y="39" width="270" height="14" uuid="4cc7046f-bd7c-48b8-93bc-6136a6911c9c"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Segoe UI Light" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Jalan Bintaro Permai No. 7 RT 001/004 Kebon Kopi.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="53" width="270" height="15" uuid="6b49e837-cea7-4296-80cf-7e3aa375ad3f"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Segoe UI Light" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Pondok Betung, Jakarta. 12330.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="229" y="68" width="270" height="15" uuid="9bdf1e3e-19d8-4cb0-84af-a3cb6ddf52cb"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Segoe UI Light" size="10" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Telp. (021) 7340065]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="102" width="555" height="1" uuid="5f13f705-1be3-40c6-8de8-2cb072a87010"/>
+				<graphicElement>
+					<pen lineWidth="3.25"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="c3b52e37-5ffa-46e6-8ac2-696209a7d10a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Segoe UI Light" size="12" isBold="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Laporan Buku]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="366" y="0" width="189" height="20" uuid="eee3141a-c992-4937-b037-e41aca577704"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Segoe UI Light" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[DateFormat.getDateInstance(DateFormat.FULL, $P{REPORT_LOCALE}).format(new java.util.Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="23" backcolor="#FFCCCC" uuid="fe4e17fe-ed07-4cfd-bd05-3fa877bd74e7"/>
+				<elementGroup>
+					<staticText>
+						<reportElement x="0" y="0" width="64" height="20" forecolor="#000000" uuid="7f52d65d-d853-401e-b894-71a1eac17708"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Segoe UI Light" size="10" isBold="true" isUnderline="false"/>
+						</textElement>
+						<text><![CDATA[ID Anggota]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="172" y="0" width="78" height="20" forecolor="#000000" uuid="edc927b7-77e5-428d-848b-c1d54f4132ac"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Segoe UI Light" size="10" isBold="true" isUnderline="false"/>
+						</textElement>
+						<text><![CDATA[No Telp]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="64" y="0" width="108" height="20" forecolor="#000000" uuid="71f99168-8bd7-4ed0-bff6-d58cda71aead"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Segoe UI Light" size="10" isBold="true" isUnderline="false"/>
+						</textElement>
+						<text><![CDATA[Nama]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="383" y="0" width="116" height="20" forecolor="#000000" uuid="4e479925-6a27-4d62-96aa-d604440e6611"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Segoe UI Light" size="10" isBold="true" isUnderline="false"/>
+						</textElement>
+						<text><![CDATA[Email ]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="250" y="0" width="133" height="20" forecolor="#000000" uuid="dbea3c5a-0699-423b-90fc-0eb46c1544ec"/>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Segoe UI Light" size="10" isBold="true" isUnderline="false"/>
+						</textElement>
+						<text><![CDATA[Alamat]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="499" y="0" width="56" height="20" forecolor="#000000" uuid="92ea9d1d-e27b-4b2c-a858-c5140f2c36c1"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="Segoe UI Light" size="10" isBold="true" isUnderline="false"/>
+						</textElement>
+						<text><![CDATA[Status]]></text>
+					</staticText>
+				</elementGroup>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="1" width="64" height="20" uuid="78a3b683-a28d-44a1-a0a3-759a6d875c73"/>
+				<textElement textAlignment="Left">
+					<font fontName="Segoe UI Light"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anggota_id_anggota}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="64" y="1" width="108" height="20" uuid="36f0fd74-6d53-4fe8-9129-fe6940a7d8fc"/>
+				<textElement textAlignment="Left">
+					<font fontName="Segoe UI Light"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anggota_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="172" y="1" width="78" height="20" uuid="d74e2648-7bef-4df4-bcaa-6733023c7724"/>
+				<textElement textAlignment="Left">
+					<font fontName="Segoe UI Light"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anggota_no_telp}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="250" y="1" width="133" height="20" uuid="edcac58b-7933-4eff-bfca-0a9909597f24"/>
+				<textElement textAlignment="Left">
+					<font fontName="Segoe UI Light"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anggota_alamat}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="383" y="1" width="114" height="20" uuid="81f80f88-3a0e-44e5-86a3-ac24deb329a2"/>
+				<textElement>
+					<font fontName="Segoe UI Light"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anggota_email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="497" y="1" width="56" height="20" uuid="35a9d958-ef85-4acd-8f6f-8b67b3365a10"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI Light"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{anggota_status}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="cc2e4c96-2dfd-44a0-a6c3-c4bf8b89b935"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="14" splitType="Stretch">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="527" height="14" forecolor="#000000" backcolor="#CCCCCC" uuid="5b997b41-5adf-4dfe-a600-3926ae38ca8b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Segoe UI Light" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Halaman "+$V{PAGE_NUMBER}+" dari "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="527" y="0" width="28" height="14" forecolor="#000000" backcolor="#CCCCCC" uuid="a872c1f5-039f-4efd-9821-c695aacf72d7"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Segoe UI Light" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
